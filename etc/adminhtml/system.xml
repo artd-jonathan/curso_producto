@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <tab id="producto" translate="label" sortOrder="250">
+            <label>Product</label>
+        </tab>
+        <section id="curso_discount" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
+            <class>curso-separator</class>
+            <label>Product</label>
+            <tab>curso</tab>
+            <resource>Curso_Producto::curso_producto_config</resource>
+            <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General Configuration</label>
+                <field id="value_type" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Value Type</label>
+                    <source_model>Curso\Discount\Model\Config\Source\ValueType</source_model>
+                </field>
+                <field id="value_increment" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Value Increment</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="custom_value" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Custom Value</label>
+                    <validate>validate-number</validate>
+                </field>
+                <field id="groups" translate="label" type="multiselect" showInDefault="1" showInWebsite="1" showInStore="1" sortOrder="10">
+                    <label>Customer group</label>
+                    <source_model>Curso\Producto\Model\Config\Source\CustomerGroup</source_model>
+                    <can_be_empty>0</can_be_empty>
+                </field>
+            </group>
+        </section>
+    </system>
+</config>
